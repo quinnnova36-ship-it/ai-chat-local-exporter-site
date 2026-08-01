@@ -32,19 +32,21 @@
 <body>
 
 <h1>AI Chat Local Exporter — 隐私政策</h1>
-<p class="sub">最后更新：2026 年 7 月 31 日</p>
+<p class="sub">最后更新：2026 年 8 月 1 日</p>
 
 <h2>一句话概括</h2>
-<p><strong>本扩展不收集、不存储、不上传您的任何数据。</strong>所有处理都在您自己的浏览器里完成，导出的文件直接保存到您自己的电脑。本扩展没有服务器，也没有账号系统。</p>
+<p><strong>本扩展没有服务器，没有账号系统，不会把您的任何数据发送给开发者或任何第三方。</strong>所有处理都在您自己的浏览器里完成，导出的文件直接保存到您自己的电脑。</p>
+<p>在 DeepSeek 上导出时，本扩展会以您自己的登录身份向 DeepSeek 自己的服务器请求您自己的对话记录——这是本扩展唯一会发起的网络请求，详见下方<a href="#network">「关于网络请求」</a>。</p>
 
 <h2>我们收集什么数据</h2>
-<p><strong>不收集任何数据。</strong></p>
-<p>本扩展不会收集、传输、出售或共享以下任何一类信息：</p>
+<p><strong>开发者不收集任何数据。</strong></p>
+<p>本扩展不会向开发者或任何第三方收集、传输、出售或共享以下任何一类信息：</p>
 <ul>
   <li>个人身份信息（姓名、地址、邮箱、身份证件等）</li>
   <li>健康信息</li>
   <li>财务和付款信息</li>
-  <li>身份验证信息（密码、凭据、Cookie、Token、登录态）</li>
+  <li>身份验证信息（密码、凭据、Cookie、Token、登录态）<br>
+      <small>※ 例外：在 DeepSeek 上导出时，扩展会读取该页面自身已有的登录凭据，并原样附加在发往 DeepSeek 自己服务器的请求头上。该凭据不会被存储，也不会发送给开发者或任何第三方。详见<a href="#network">「关于网络请求」</a>。</small></li>
   <li>个人通讯（您与 AI 的对话内容）</li>
   <li>位置信息</li>
   <li>网络记录（浏览历史、点击记录）</li>
@@ -59,7 +61,19 @@
   <li>在您的浏览器内部把文本整理成 Markdown、Text、CSV 或 JSON。</li>
   <li>通过浏览器的下载功能，把文件保存到<strong>您自己指定的本地位置</strong>。</li>
 </ol>
-<p>整个过程<strong>不涉及任何网络请求</strong>。对话内容从未离开您的设备。</p>
+<p>整理和写文件的全过程都在您的浏览器内完成，<strong>不经过任何服务器</strong>。</p>
+
+<h2 id="network">关于网络请求</h2>
+<p>在本扩展支持的 10 个平台中，<strong>有 9 个完全不发起任何网络请求</strong>，扩展只读取页面上已经渲染出来的文本。</p>
+<p><strong>唯一的例外是 DeepSeek。</strong></p>
+<p>DeepSeek 的网页不会把长对话的完整历史渲染到页面上。因此在 DeepSeek 上导出时，本扩展会以<strong>您自己的登录身份</strong>，向 <strong>DeepSeek 自己的历史接口</strong>请求<strong>您自己的这一条对话记录</strong>。</p>
+<ul>
+  <li>请求的发起方是您的浏览器，接收方是 DeepSeek 自己的服务器。</li>
+  <li>数据<strong>不经过任何第三方</strong>，也<strong>不会发送到本扩展作者的任何服务器</strong>——本扩展没有服务器。</li>
+  <li>为完成这个请求，扩展会读取 DeepSeek 页面自身已有的登录凭据，并原样附加在请求头上。该凭据<strong>不存储、不上传、不用于任何其他用途</strong>。</li>
+  <li>请求内容仅限您当前正在查看的那一条对话，不会批量拉取您的其他会话。</li>
+</ul>
+<p>换句话说：这条请求要到的数据，是 DeepSeek 本来就替您保存着的、属于您自己的内容。</p>
 
 <h2>权限说明</h2>
 <table>
@@ -87,17 +101,17 @@
 
 <h2>本扩展不会做的事</h2>
 <ul>
-  <li>不读取、不保存您在任何平台的账号、密码、Cookie、Token 或登录态。</li>
-  <li>不上传任何内容到任何服务器（本扩展没有服务器）。</li>
-  <li>不调用 AI 平台的内部接口。</li>
-  <li>不自动批量抓取您的历史会话。</li>
+  <li>不保存您在任何平台的账号、密码、Cookie、Token 或登录态；除 DeepSeek 导出所需的同源凭据外，也不读取。</li>
+  <li>不上传任何内容到开发者的服务器或任何第三方服务器（本扩展没有服务器）。</li>
+  <li>除 DeepSeek 的历史接口外，不调用任何 AI 平台的内部接口。</li>
+  <li>不自动批量抓取您的历史会话，只处理您当前打开的这一条对话。</li>
   <li>不加载任何远程代码。</li>
   <li>不投放广告，不做用户画像，不做行为分析。</li>
   <li>不使用任何第三方分析、统计或崩溃上报服务。</li>
 </ul>
 
 <h2>数据共享与出售</h2>
-<p>因为本扩展不收集任何数据，所以：</p>
+<p>因为开发者不收集任何数据，所以：</p>
 <ul>
   <li>不会将数据出售给第三方。</li>
   <li>不会将数据用于与核心功能无关的任何用途。</li>
@@ -105,7 +119,7 @@
 </ul>
 
 <h2>儿童隐私</h2>
-<p>本扩展不收集任何数据，因此也不会收集儿童的数据。</p>
+<p>开发者不收集任何数据，因此也不会收集儿童的数据。</p>
 
 <h2>政策变更</h2>
 <p>如果本扩展未来新增了任何涉及数据传输的功能，我们会在功能上线之前更新本页面，并在扩展的更新说明中明确告知。</p>
@@ -116,13 +130,15 @@
 <hr class="en">
 
 <h1>AI Chat Local Exporter — Privacy Policy</h1>
-<p class="sub">Last updated: July 31, 2026</p>
+<p class="sub">Last updated: August 1, 2026</p>
 
 <h2>Summary</h2>
-<p><strong>This extension does not collect, store, or transmit any user data.</strong> All processing happens locally in your own browser, and exported files are saved directly to your own computer. This extension has no server and no account system.</p>
+<p><strong>This extension has no server, no account system, and sends none of your data to the developer or any third party.</strong> All processing happens locally in your own browser, and exported files are saved directly to your own computer.</p>
+<p>When exporting on DeepSeek, the extension requests your own conversation from DeepSeek's own server using your own logged-in session. That is the only network request this extension ever makes — see <a href="#network-en">Network Requests</a> below.</p>
 
 <h2>Data We Collect</h2>
-<p><strong>None.</strong> This extension does not collect, transmit, sell, or share any of the following: personally identifiable information, health information, financial and payment information, authentication information, personal communications, location, web history, user activity, or website content.</p>
+<p><strong>The developer collects nothing.</strong> This extension does not collect, transmit, sell, or share any of the following with the developer or any third party: personally identifiable information, health information, financial and payment information, authentication information, personal communications, location, web history, user activity, or website content.</p>
+<p><small>※ One exception regarding authentication information: on DeepSeek, the extension reads the credential already present in that page and attaches it, unchanged, to a request sent to DeepSeek's own server. That credential is never stored and never sent to the developer or any third party.</small></p>
 
 <h2>How It Works</h2>
 <ol>
@@ -131,7 +147,19 @@
   <li>It formats that text into Markdown, Text, CSV, or JSON entirely within your browser.</li>
   <li>It saves the file to a local location <strong>you choose</strong>, using the browser's download API.</li>
 </ol>
-<p>No network request is made at any point. Your conversation content never leaves your device.</p>
+<p>Formatting and file writing happen entirely inside your browser, with <strong>no server involved</strong>.</p>
+
+<h2 id="network-en">Network Requests</h2>
+<p>Of the 10 supported platforms, <strong>9 involve no network request at all</strong> — the extension only reads text already rendered on the page.</p>
+<p><strong>DeepSeek is the sole exception.</strong></p>
+<p>DeepSeek's web page does not render the full history of a long conversation. When exporting on DeepSeek, the extension therefore requests <strong>your own conversation</strong> from <strong>DeepSeek's own history endpoint</strong>, using <strong>your own logged-in session</strong>.</p>
+<ul>
+  <li>The request originates from your browser and is received by DeepSeek's own server.</li>
+  <li>No third party is involved, and nothing is sent to the developer's servers — this extension has no server.</li>
+  <li>To make that request, the extension reads the credential already present in the DeepSeek page and attaches it unchanged to the request header. It is <strong>never stored, never uploaded, and never used for anything else</strong>.</li>
+  <li>Only the conversation you are currently viewing is requested. Your other conversations are not fetched.</li>
+</ul>
+<p>In short: this request retrieves data that DeepSeek already stores on your behalf, and that belongs to you.</p>
 
 <h2>Permission Justifications</h2>
 <table>
@@ -159,17 +187,17 @@
 
 <h2>What This Extension Never Does</h2>
 <ul>
-  <li>Never reads or stores your credentials, cookies, tokens, or session state on any platform.</li>
-  <li>Never uploads content to any server (there is no server).</li>
-  <li>Never calls the AI platforms' internal APIs.</li>
-  <li>Never bulk-scrapes your conversation history automatically.</li>
+  <li>Never stores your credentials, cookies, tokens, or session state on any platform, and never reads them except for the same-origin credential required for DeepSeek export.</li>
+  <li>Never uploads content to the developer's servers or any third-party server (there is no server).</li>
+  <li>Never calls any AI platform's internal API, other than DeepSeek's history endpoint.</li>
+  <li>Never bulk-scrapes your conversation history; only the conversation you currently have open is processed.</li>
   <li>Never loads remote code.</li>
   <li>Never serves ads, builds user profiles, or performs behavioral analytics.</li>
   <li>Never uses any third-party analytics, telemetry, or crash-reporting service.</li>
 </ul>
 
 <h2>Data Sharing and Sale</h2>
-<p>Because no data is collected, no data is sold to third parties, used for any purpose unrelated to the extension's single purpose, or used for creditworthiness or lending purposes.</p>
+<p>Because the developer collects no data, no data is sold to third parties, used for any purpose unrelated to the extension's single purpose, or used for creditworthiness or lending purposes.</p>
 
 <h2>Changes to This Policy</h2>
 <p>If this extension ever adds a feature that transmits data, this page will be updated before that feature ships, and the change will be stated explicitly in the extension's release notes.</p>
