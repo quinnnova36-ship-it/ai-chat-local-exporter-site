@@ -32,67 +32,62 @@
 <body>
 
 <h1>AI Chat Local Exporter — 隐私政策</h1>
-<p class="sub">最后更新：2026 年 8 月 1 日</p>
+<p class="sub">最后更新：2026 年 8 月 12 日</p>
 
 <h2>一句话概括</h2>
-<p><strong>本扩展没有服务器，没有账号系统，不会把您的任何数据发送给开发者或任何第三方。</strong>所有处理都在您自己的浏览器里完成，导出的文件直接保存到您自己的电脑。</p>
-<p>在 DeepSeek 上导出时，本扩展会以您自己的登录身份向 DeepSeek 自己的服务器请求您自己的对话记录——这是本扩展唯一会发起的网络请求，详见下方<a href="#network">「关于网络请求」</a>。</p>
+<p><strong>本扩展会处理你当前打开的 AI 对话，但插件作者不会收到、保存、出售或查看这些内容。</strong>导出整理和文件生成在你的浏览器里完成，文件直接保存到你的电脑。</p>
+<p>ChatGPT 快速导出和 DeepSeek 完整历史导出会向对应平台自己的服务器请求当前会话。请求使用你当前的登录状态，数据不会发送到插件作者的服务器；本扩展没有开发者数据服务器。</p>
 
-<h2>我们收集什么数据</h2>
-<p><strong>开发者不收集任何数据。</strong></p>
-<p>本扩展不会向开发者或任何第三方收集、传输、出售或共享以下任何一类信息：</p>
+<h2>本扩展会处理哪些数据</h2>
 <ul>
-  <li>个人身份信息（姓名、地址、邮箱、身份证件等）</li>
-  <li>健康信息</li>
-  <li>财务和付款信息</li>
-  <li>身份验证信息（密码、凭据、Cookie、Token、登录态）<br>
-      <small>※ 例外：在 DeepSeek 上导出时，扩展会读取该页面自身已有的登录凭据，并原样附加在发往 DeepSeek 自己服务器的请求头上。该凭据不会被存储，也不会发送给开发者或任何第三方。详见<a href="#network">「关于网络请求」</a>。</small></li>
-  <li>个人通讯（您与 AI 的对话内容）</li>
-  <li>位置信息</li>
-  <li>网络记录（浏览历史、点击记录）</li>
-  <li>用户活动（按键、鼠标操作、使用统计）</li>
-  <li>网站内容</li>
+  <li>你当前打开的 AI 对话内容，包括用户提问、AI 回答和可识别的附件名称或类型。</li>
+  <li>当前会话的网址、标题和平台信息，用于识别会话并生成本地文件名。</li>
+  <li>ChatGPT 和 DeepSeek 当前登录会话提供的临时凭据，仅用于向对应平台请求当前会话。</li>
 </ul>
+<p><strong>插件作者不会收到这些数据。</strong>扩展不建立用户账号，不保存对话数据库，不投放广告，也不使用统计或崩溃上报服务。</p>
 
 <h2>本扩展如何工作</h2>
 <ol>
-  <li>您在受支持的 AI 平台页面上点击本扩展的图标。</li>
-  <li>本扩展读取<strong>该页面上已经显示出来的对话文本</strong>。</li>
-  <li>在您的浏览器内部把文本整理成 Markdown、Text、CSV 或 JSON。</li>
-  <li>通过浏览器的下载功能，把文件保存到<strong>您自己指定的本地位置</strong>。</li>
+  <li>你在受支持的 AI 对话页面上主动点击导出。</li>
+  <li>扩展从当前页面读取对话；使用 ChatGPT 快速导出或 DeepSeek 完整历史导出时，还会向对应平台自己的服务器请求当前会话。</li>
+  <li>扩展在你的浏览器内把对话整理为 Markdown、Text、CSV 或 JSON。</li>
+  <li>浏览器把文件保存到你选择的本地位置。</li>
 </ol>
-<p>整理和写文件的全过程都在您的浏览器内完成，<strong>不经过任何服务器</strong>。</p>
 
 <h2 id="network">关于网络请求</h2>
-<p>在本扩展支持的 10 个平台中，<strong>有 9 个完全不发起任何网络请求</strong>，扩展只读取页面上已经渲染出来的文本。</p>
-<p><strong>唯一的例外是 DeepSeek。</strong></p>
-<p>DeepSeek 的网页不会把长对话的完整历史渲染到页面上。因此在 DeepSeek 上导出时，本扩展会以<strong>您自己的登录身份</strong>，向 <strong>DeepSeek 自己的历史接口</strong>请求<strong>您自己的这一条对话记录</strong>。</p>
+<p>大多数受支持的平台由扩展读取当前页面中的对话内容。以下两种导出会额外向平台自己的服务器请求当前会话：</p>
 <ul>
-  <li>请求的发起方是您的浏览器，接收方是 DeepSeek 自己的服务器。</li>
-  <li>数据<strong>不经过任何第三方</strong>，也<strong>不会发送到本扩展作者的任何服务器</strong>——本扩展没有服务器。</li>
-  <li>为完成这个请求，扩展会读取 DeepSeek 页面自身已有的登录凭据，并原样附加在请求头上。该凭据<strong>不存储、不上传、不用于任何其他用途</strong>。</li>
-  <li>请求内容仅限您当前正在查看的那一条对话，不会批量拉取您的其他会话。</li>
+  <li><strong>ChatGPT 快速导出：</strong>扩展向 ChatGPT 自己的登录会话接口和当前会话接口发出请求，只读取你当前打开的会话和当前回答分支。</li>
+  <li><strong>DeepSeek 完整历史导出：</strong>扩展向 DeepSeek 自己的历史接口请求你当前打开的会话。</li>
 </ul>
-<p>换句话说：这条请求要到的数据，是 DeepSeek 本来就替您保存着的、属于您自己的内容。</p>
+<p>这些请求都从你的浏览器发往对应 AI 平台自己的服务器，并使用 HTTPS。登录凭据只在完成本次请求时临时使用，不写入扩展存储，不进入导出文件或诊断信息，也不会发送给插件作者。</p>
+
+<h2>数据用途与保留</h2>
+<ul>
+  <li>对话内容和登录凭据只用于完成你主动发起的当前会话导出。</li>
+  <li>扩展不会把这些数据用于广告、用户画像、信用判断或与导出无关的用途。</li>
+  <li>扩展不会把对话内容或登录凭据保存在开发者服务器；本地导出文件由你自行管理和删除。</li>
+  <li>本扩展对用户数据的使用遵守 Chrome Web Store 用户数据政策，包括 Limited Use 要求。</li>
+</ul>
 
 <h2>权限说明</h2>
 <table>
   <tr><th>权限</th><th>用途</th></tr>
   <tr>
     <td><code>activeTab</code></td>
-    <td>仅在您主动点击扩展图标时，访问当前这一个标签页，用于读取当前对话内容。不访问其他标签页。</td>
+    <td>在你主动使用扩展时访问当前标签页，用于识别平台和当前会话。</td>
   </tr>
   <tr>
     <td><code>downloads</code></td>
-    <td>把生成好的文件保存到您本地磁盘。仅用于写出导出结果。</td>
+    <td>把生成的导出文件保存到你的电脑。</td>
   </tr>
   <tr>
     <td><code>scripting</code></td>
-    <td>把对话提取脚本注入当前 AI 页面，以读取页面上已渲染的对话文本。脚本全部随扩展打包，不从任何远程地址加载代码。</td>
+    <td>在当前 AI 对话页面运行随扩展打包的提取脚本；扩展不加载远程代码。</td>
   </tr>
   <tr>
     <td>网站访问权限<br>(host permissions)</td>
-    <td>严格限定在下方列出的受支持 AI 平台域名。在其他任何网站上，本扩展完全不运行。</td>
+    <td>仅允许扩展在受支持的 AI 平台域名上读取当前会话和完成对应平台请求。</td>
   </tr>
 </table>
 
@@ -101,28 +96,14 @@
 
 <h2>本扩展不会做的事</h2>
 <ul>
-  <li>不保存您在任何平台的账号、密码、Cookie、Token 或登录态；除 DeepSeek 导出所需的同源凭据外，也不读取。</li>
-  <li>不上传任何内容到开发者的服务器或任何第三方服务器（本扩展没有服务器）。</li>
-  <li>除 DeepSeek 的历史接口外，不调用任何 AI 平台的内部接口。</li>
-  <li>不自动批量抓取您的历史会话，只处理您当前打开的这一条对话。</li>
-  <li>不加载任何远程代码。</li>
-  <li>不投放广告，不做用户画像，不做行为分析。</li>
-  <li>不使用任何第三方分析、统计或崩溃上报服务。</li>
+  <li>不会把账号、密码、Cookie、Token 或登录状态写入扩展存储或开发者服务器。</li>
+  <li>不会把对话内容或登录凭据发送给插件作者、广告商或分析服务。</li>
+  <li>不会自动批量抓取账号里的其他历史会话，只处理你当前打开的一条会话。</li>
+  <li>不会加载远程代码，不投放广告，不做用户画像或行为分析。</li>
 </ul>
-
-<h2>数据共享与出售</h2>
-<p>因为开发者不收集任何数据，所以：</p>
-<ul>
-  <li>不会将数据出售给第三方。</li>
-  <li>不会将数据用于与核心功能无关的任何用途。</li>
-  <li>不会将数据用于确定信用度或放贷用途。</li>
-</ul>
-
-<h2>儿童隐私</h2>
-<p>开发者不收集任何数据，因此也不会收集儿童的数据。</p>
 
 <h2>政策变更</h2>
-<p>如果本扩展未来新增了任何涉及数据传输的功能，我们会在功能上线之前更新本页面，并在扩展的更新说明中明确告知。</p>
+<p>如果扩展的数据处理方式发生变化，我们会在新版本发布前更新本页面，并在商店更新说明中明确说明。</p>
 
 <h2>联系方式</h2>
 <p>如对本政策有任何疑问，请联系：<strong>carolineher.dev@outlook.com</strong></p>
@@ -130,77 +111,78 @@
 <hr class="en">
 
 <h1>AI Chat Local Exporter — Privacy Policy</h1>
-<p class="sub">Last updated: August 1, 2026</p>
+<p class="sub">Last updated: August 12, 2026</p>
 
 <h2>Summary</h2>
-<p><strong>This extension has no server, no account system, and sends none of your data to the developer or any third party.</strong> All processing happens locally in your own browser, and exported files are saved directly to your own computer.</p>
-<p>When exporting on DeepSeek, the extension requests your own conversation from DeepSeek's own server using your own logged-in session. That is the only network request this extension ever makes — see <a href="#network-en">Network Requests</a> below.</p>
+<p><strong>This extension processes the AI conversation you currently have open, but the developer does not receive, store, sell, or view that content.</strong> Formatting and file generation happen in your browser, and the exported file is saved directly to your computer.</p>
+<p>ChatGPT fast export and DeepSeek complete-history export request the current conversation from the corresponding platform's own servers using your current signed-in session. The data is not sent to the extension developer, and the extension has no developer-operated data server.</p>
 
-<h2>Data We Collect</h2>
-<p><strong>The developer collects nothing.</strong> This extension does not collect, transmit, sell, or share any of the following with the developer or any third party: personally identifiable information, health information, financial and payment information, authentication information, personal communications, location, web history, user activity, or website content.</p>
-<p><small>※ One exception regarding authentication information: on DeepSeek, the extension reads the credential already present in that page and attaches it, unchanged, to a request sent to DeepSeek's own server. That credential is never stored and never sent to the developer or any third party.</small></p>
+<h2>Data Processed by the Extension</h2>
+<ul>
+  <li>The AI conversation currently open, including user prompts, AI responses, and recognizable attachment names or types.</li>
+  <li>The current conversation URL, title, and platform information, used to identify the conversation and create a local file name.</li>
+  <li>Temporary authentication credentials supplied by the current ChatGPT or DeepSeek session, used only to request the current conversation from that platform.</li>
+</ul>
+<p><strong>The developer does not receive this data.</strong> The extension creates no user account, stores no conversation database, serves no ads, and uses no analytics or crash-reporting service.</p>
 
 <h2>How It Works</h2>
 <ol>
-  <li>You click the extension icon on a supported AI chat page.</li>
-  <li>The extension reads the conversation text <strong>already rendered on that page</strong>.</li>
-  <li>It formats that text into Markdown, Text, CSV, or JSON entirely within your browser.</li>
-  <li>It saves the file to a local location <strong>you choose</strong>, using the browser's download API.</li>
+  <li>You actively start an export on a supported AI conversation page.</li>
+  <li>The extension reads the conversation from the current page. ChatGPT fast export and DeepSeek complete-history export also request the current conversation from the corresponding platform's own servers.</li>
+  <li>The extension formats the conversation as Markdown, Text, CSV, or JSON in your browser.</li>
+  <li>Your browser saves the file to a local location you choose.</li>
 </ol>
-<p>Formatting and file writing happen entirely inside your browser, with <strong>no server involved</strong>.</p>
 
 <h2 id="network-en">Network Requests</h2>
-<p>Of the 10 supported platforms, <strong>9 involve no network request at all</strong> — the extension only reads text already rendered on the page.</p>
-<p><strong>DeepSeek is the sole exception.</strong></p>
-<p>DeepSeek's web page does not render the full history of a long conversation. When exporting on DeepSeek, the extension therefore requests <strong>your own conversation</strong> from <strong>DeepSeek's own history endpoint</strong>, using <strong>your own logged-in session</strong>.</p>
+<p>Most supported platforms are exported from conversation content available in the current page. Two export paths also request the current conversation from the platform's own servers:</p>
 <ul>
-  <li>The request originates from your browser and is received by DeepSeek's own server.</li>
-  <li>No third party is involved, and nothing is sent to the developer's servers — this extension has no server.</li>
-  <li>To make that request, the extension reads the credential already present in the DeepSeek page and attaches it unchanged to the request header. It is <strong>never stored, never uploaded, and never used for anything else</strong>.</li>
-  <li>Only the conversation you are currently viewing is requested. Your other conversations are not fetched.</li>
+  <li><strong>ChatGPT fast export:</strong> requests the current signed-in session and the conversation currently open in ChatGPT, following only the selected answer branch.</li>
+  <li><strong>DeepSeek complete-history export:</strong> requests the conversation currently open from DeepSeek's own history endpoint.</li>
 </ul>
-<p>In short: this request retrieves data that DeepSeek already stores on your behalf, and that belongs to you.</p>
+<p>Both requests travel over HTTPS from your browser to the corresponding AI platform. Authentication credentials are used only in memory for the current request. They are not written to extension storage, included in exports or diagnostics, or sent to the extension developer.</p>
+
+<h2>Data Use and Retention</h2>
+<ul>
+  <li>Conversation content and authentication credentials are used only to complete the current conversation export you requested.</li>
+  <li>The extension does not use this data for advertising, user profiling, credit decisions, or any purpose unrelated to exporting the conversation.</li>
+  <li>No conversation content or authentication credentials are retained on a developer server. You control and delete the local exported files.</li>
+  <li>This extension's use of user data complies with the Chrome Web Store User Data Policy, including the Limited Use requirements.</li>
+</ul>
 
 <h2>Permission Justifications</h2>
 <table>
   <tr><th>Permission</th><th>Why it is needed</th></tr>
   <tr>
     <td><code>activeTab</code></td>
-    <td>Accesses only the current tab, and only when you explicitly click the extension icon, in order to read the conversation shown on that page. No other tab is accessed.</td>
+    <td>Accesses the current tab when you use the extension, so it can identify the platform and current conversation.</td>
   </tr>
   <tr>
     <td><code>downloads</code></td>
-    <td>Writes the generated file to your local disk. Used solely to deliver the export result.</td>
+    <td>Saves the generated export file to your computer.</td>
   </tr>
   <tr>
     <td><code>scripting</code></td>
-    <td>Injects the extraction script into the current AI chat page to read the rendered conversation text. All scripts are bundled with the extension; no remote code is ever loaded.</td>
+    <td>Runs extraction scripts bundled with the extension on the current AI conversation page. No remote code is loaded.</td>
   </tr>
   <tr>
     <td>Host permissions</td>
-    <td>Strictly limited to the supported AI platform domains listed below. The extension does not run on any other website.</td>
+    <td>Allow the extension to read the current conversation and make the disclosed platform requests only on supported AI platform domains.</td>
   </tr>
 </table>
 
 <h2>Supported Sites</h2>
 <p>ChatGPT, Google Gemini, Claude, Grok, DeepSeek, Doubao, Kimi, Tencent Yuanbao, Tongyi Qianwen, and Ernie (Yiyan).</p>
 
-<h2>What This Extension Never Does</h2>
+<h2>What This Extension Does Not Do</h2>
 <ul>
-  <li>Never stores your credentials, cookies, tokens, or session state on any platform, and never reads them except for the same-origin credential required for DeepSeek export.</li>
-  <li>Never uploads content to the developer's servers or any third-party server (there is no server).</li>
-  <li>Never calls any AI platform's internal API, other than DeepSeek's history endpoint.</li>
-  <li>Never bulk-scrapes your conversation history; only the conversation you currently have open is processed.</li>
-  <li>Never loads remote code.</li>
-  <li>Never serves ads, builds user profiles, or performs behavioral analytics.</li>
-  <li>Never uses any third-party analytics, telemetry, or crash-reporting service.</li>
+  <li>It does not write account details, passwords, cookies, tokens, or session state to extension storage or a developer server.</li>
+  <li>It does not send conversation content or authentication credentials to the developer, advertisers, or analytics services.</li>
+  <li>It does not automatically bulk-fetch other conversations in your account; it processes only the conversation currently open.</li>
+  <li>It does not load remote code, serve ads, build user profiles, or perform behavioral analytics.</li>
 </ul>
 
-<h2>Data Sharing and Sale</h2>
-<p>Because the developer collects no data, no data is sold to third parties, used for any purpose unrelated to the extension's single purpose, or used for creditworthiness or lending purposes.</p>
-
 <h2>Changes to This Policy</h2>
-<p>If this extension ever adds a feature that transmits data, this page will be updated before that feature ships, and the change will be stated explicitly in the extension's release notes.</p>
+<p>If the extension's data handling changes, this page will be updated before the new version is released, and the change will be stated in the store release notes.</p>
 
 <h2>Contact</h2>
 <p>Questions about this policy: <strong>carolineher.dev@outlook.com</strong></p>
